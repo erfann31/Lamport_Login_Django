@@ -1,7 +1,7 @@
 import hashlib
 
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .forms import CustomUserCreationForm, CustomAuthenticationForm
 from .models import CustomUser
@@ -12,7 +12,7 @@ def register_view(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            return HttpResponse("Registration successful.")
+            return redirect('users:login')
     else:
         form = CustomUserCreationForm()
     return render(request, 'register.html', {'form': form})
