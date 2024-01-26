@@ -24,12 +24,11 @@ def login_view(request):
         if form.is_valid():
             username = form.cleaned_data['username']
             client_hashed_password = form.cleaned_data['password']
-            iterations = form.cleaned_data['iterations']  # Get the iterations value from the form
+            iterations = form.cleaned_data['iterations']
 
             user = CustomUser.objects.filter(username=username).first()
 
             if user:
-                # Hash the stored password once for comparison
                 hashed_password = user.hashed_password
                 server_hashed_password = hashlib.sha256(client_hashed_password.encode('utf-8')).hexdigest()
                 print('client_hashed_password (sent from client) :', client_hashed_password)
@@ -44,7 +43,9 @@ def login_view(request):
             return HttpResponse("Invalid username or password.")
     else:
         form = CustomAuthenticationForm()
+
     return render(request, 'login.html', {'form': form})
+
 
 def get_iterations_view(request):
     if request.method == 'GET':
@@ -53,4 +54,4 @@ def get_iterations_view(request):
             user = CustomUser.objects.filter(username=username).first()
             if user:
                 return JsonResponse({'iterations': user.iterations})
-    return JsonResponse({'error': 'Invalid request'})
+    return JsonResponse({'iterations': 'Invalid request'})
