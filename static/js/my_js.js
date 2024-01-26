@@ -32,7 +32,6 @@ function hash(str) {
                 var hashedPassword = password;
                 var count = 0;
 
-                // Use a recursive function to hash the password asynchronously
                 function hashNext() {
                     if (count < iterations - 1) {
                         hash(hashedPassword).then(function (result) {
@@ -49,7 +48,17 @@ function hash(str) {
             });
         }
 
-        function submitForm(event) {
+function showSnackbar(message) {
+    var snackbar = document.getElementById("snackbar");
+    snackbar.innerHTML = message;
+    snackbar.className = "show";
+    setTimeout(function () {
+        snackbar.className = snackbar.className.replace("show", "");
+    }, 3000);
+}
+
+$(document).ready(function () {
+    $("#login-form").submit(function (event) {
             event.preventDefault();
             const form = $(this);
             const username = form.find("input[name='username']").val();
@@ -57,7 +66,8 @@ function hash(str) {
 
             fetchIterations(username).then(function (data) {
                 const iterations = data.iterations;
-                alert('iterations: ' + iterations);
+                alert('iteration: ' + iterations)
+                if (iterations !== "Invalid request") {
                 hashPassword(password, iterations).then(function (hashedPassword) {
                     $.ajax({
                         url: form.attr("action"),
@@ -69,16 +79,16 @@ function hash(str) {
                             csrfmiddlewaretoken: form.find("input[name='csrfmiddlewaretoken']").val()
                         },
                         success: function (data) {
-                            $("#result").html(data);
+                            showSnackbar(data);
                         },
                         error: function (xhr, status, error) {
-                            $("#result").html("An error occurred: " + error);
+                            showSnackbar("An error occurred: " + error);
                         }
                     });
                 });
+                } else {
+                    showSnackbar("User does not exist! Please register first.");
+                }
             });
-        }
-
-        $(document).ready(function () {
-            $("#login-form").on("submit", submitForm);
-        });
+    });
+});
