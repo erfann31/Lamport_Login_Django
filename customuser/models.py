@@ -1,4 +1,3 @@
-# Changes to the CustomUser model
 import hashlib
 
 from django.db import models
