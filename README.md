@@ -65,7 +65,7 @@ https://docs.djangoproject.com/en/5.0/ref/csrf/
 برای اطلاعات بیشتر به مقادیر چاپ شده در ترمینال سرور و کنسول مرورگر دقت کنید.
 ### تست با پسورد اشتباه:
 ![image](https://github.com/erfann31/Lamport_Login_Django/assets/75057732/21d432b3-70ae-45df-957e-65abee9ab412)
-![image](https://github.com/erfann31/Lamport_Login_Django/assets/75057732/4903d7f8-d7e4-414c-b6c4-d6cdf0624e44)
+![image](https://github.com/erfann31/Lamport_Login_Django/assets/75057732/49e8eb0f-1165-4a51-94d8-02833b9a8bdc)
 ![image](https://github.com/erfann31/Lamport_Login_Django/assets/75057732/104ef1b3-160b-4406-a0fd-98a3c5efa4d2)
 ### تست با پسورد درست:
 ![image](https://github.com/erfann31/Lamport_Login_Django/assets/75057732/6222f7af-00ac-4068-9cf3-28e666ce7097)
