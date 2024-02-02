@@ -68,9 +68,10 @@ https://docs.djangoproject.com/en/5.0/ref/csrf/
 ![image](https://github.com/erfann31/Lamport_Login_Django/assets/75057732/4903d7f8-d7e4-414c-b6c4-d6cdf0624e44)
 ![image](https://github.com/erfann31/Lamport_Login_Django/assets/75057732/104ef1b3-160b-4406-a0fd-98a3c5efa4d2)
 ### تست با پسورد درست:
-![image](https://github.com/erfann31/Lamport_Login_Django/assets/75057732/4baab7da-4928-4e6e-8eb4-fdfec5f758db)
 ![image](https://github.com/erfann31/Lamport_Login_Django/assets/75057732/6222f7af-00ac-4068-9cf3-28e666ce7097)
 ![image](https://github.com/erfann31/Lamport_Login_Django/assets/75057732/b775ce66-93bc-4a6f-b42f-5d8ba5b02dc9)
+![image](https://github.com/erfann31/Lamport_Login_Django/assets/75057732/4baab7da-4928-4e6e-8eb4-fdfec5f758db)
+
 
 
 </div>
